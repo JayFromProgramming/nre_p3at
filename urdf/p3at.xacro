@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- 
+P3AT definition for Gazebo simultion suitable for multi-robot sim.
+Note the namespace (nsp) and tf_prefix (tfpre) are provided as 
+input arguments and then propogated appropriately.
+-->
+<robot name="p3at.xacro" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="nsp" default="p0" />
+  <xacro:arg name="tfpre" default="p0_tf" />
+ 
+<!-- This is the baseic robot model which is common.  Taken from AMR -->
+<xacro:include filename="$(find nre_p3at)/urdf/pioneer3at.urdf.xacro" />
+  
+<!-- Gazebo plugins which need to know namespace and tf_prefix information -->
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/$(arg nsp)</robotNamespace>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <leftFrontJoint>p3at_front_left_wheel_joint</leftFrontJoint>
+    <rightFrontJoint>p3at_front_right_wheel_joint</rightFrontJoint>
+    <leftRearJoint>p3at_back_left_wheel_joint</leftRearJoint>
+    <rightRearJoint>p3at_back_right_wheel_joint</rightRearJoint>
+    <wheelSeparation>0.4</wheelSeparation>
+    <wheelDiameter>0.215</wheelDiameter>
+    <MaxForce>5.0</MaxForce>
+    <torque>200</torque>
+    <broadcastTF>1</broadcastTF>
+  </plugin>
+</gazebo>
+
+
+</robot>
