@@ -26,7 +26,7 @@
     <arg name="namespace" value="p1" />
     <arg name="initX" value="1" />
     <arg name="initY" value="1" />
-    <arg name="initYaw" value="1.0" />
+    <arg name="initYaw" value="1.57" />
   </include>
 </group>
 
