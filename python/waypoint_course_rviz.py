@@ -3,6 +3,7 @@ import rospy
 import std_msgs.msg 
 import visualization_msgs.msg as vm
 import geometry_msgs.msg as gm
+import time
 
 def clear():
     pub = rospy.Publisher('visualization_marker',vm.Marker,latch=True,queue_size=10)
@@ -13,40 +14,42 @@ def clear():
         pub.publish(m)
 
 def talker():
-    pub = rospy.Publisher('visualization_marker',vm.Marker,latch=True,queue_size=10)
-    #pub = rospy.Publisher('visualization_marker_array',vm.MarkerArray,latch=True,queue_size=10)
-
-    #rospy.init_node('waypoint_course', anonymous=True)
+    pub = rospy.Publisher('visualization_marker',vm.Marker,queue_size=10)
     rospy.init_node('waypoint_course')    
     
-    if not rospy.is_shutdown():
-        XX = [0,2,-2,-2,2]
-        YY = [0,2,2,-2,-2]
-        m=vm.Marker()
-        m.type = m.SPHERE_LIST
-        m.action = m.MODIFY
-        s=0.2
-        m.scale.x = s
-        m.scale.y = s
-        m.scale.z = s
-        m.color.r=1.0
-        m.color.g=0
-        m.color.a=1.0
-        m.header.stamp = rospy.Time.now()
-        m.header.frame_id = "odom"
-        for x,y,mid in zip(XX,YY,range(len(XX))):
-            p = gm.Point()
-            p.x =x
-            p.y =y
-            m.points.append(p)
-
+    XX = [0,2,-2,-2,2]
+    YY = [0,2,2,-2,-2]
+    m=vm.Marker()
+    m.type = m.SPHERE_LIST
+    m.action = m.ADD
+    s=0.2
+    m.scale.x = s
+    m.scale.y = s
+    m.scale.z = s
+    m.color.r=1.0
+    m.color.g=0
+    m.color.a=1.0
+    m.pose.orientation.w=1.0;
+    m.header.stamp = rospy.Time.now()
+    m.header.frame_id = "odom"
+    m.id = 1
+    for x,y,mid in zip(XX,YY,range(len(XX))):
+        p = gm.Point()
+        p.x =x
+        p.y =y
+        m.points.append(p)
+    cnt = 0
+    while ( (cnt<25) and (not rospy.is_shutdown()) ):
         print("Publishing Sphere List")
         pub.publish(m)
+        rospy.sleep(0.5)
+        cnt += 1
       
       
 
 if __name__ == '__main__':
 
+    #time.sleep(10.0) # wait for rviz to start!
     try:
         #clear()
         talker()
