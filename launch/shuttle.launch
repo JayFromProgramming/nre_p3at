@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="port" default="/dev/ttyUSB0" />
+  <arg name="port" default="/dev/ttyS0" />
   <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen">
     <param name="port" value="$(arg port)" />
   </node>
