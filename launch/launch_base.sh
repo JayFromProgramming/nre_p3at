@@ -5,4 +5,4 @@ export ROS_MASTER_URI=http://${BASE_IP}:11311
 export ROS_IP=${BASE_IP}
 export ROS_HOSTNAME=${BASE_IP}
 env | grep ROS
-#roslaunch nre_joy teleop_ugv_joy_p3at.launch 
+roslaunch nre_joy teleop_ugv_joy_p3at.launch 

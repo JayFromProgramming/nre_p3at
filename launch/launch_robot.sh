@@ -6,4 +6,5 @@ export ROS_IP=${ROBOT_IP}
 export ROS_HOSTNAME=${ROBOT_IP}
 #rosrun rosaria RosAria _port:=/dev/ttyS0 __name:=my_p3at
 #rosrun nmea_navsat_driver nmea_serial_driver _port:=/dev/ttyS1 _baud:=4800
-rosrun um7 um7_driver _port:=/dev/ttyUSB0
+#rosrun um7 um7_driver _port:=/dev/ttyUSB0
+roslaunch base2.launch
