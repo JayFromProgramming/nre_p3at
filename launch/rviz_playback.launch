@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-   <param name="/use_sim_time" type="bool" value="True"/>
+  <param name="/use_sim_time" type="bool" value="True"/>
   <!-- This following lines are taken from the p2os_urdf package-->
   <include file="$(find p2os_urdf)/launch/upload_pioneer3at.xml"/>
   
