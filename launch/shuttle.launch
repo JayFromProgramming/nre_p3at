@@ -13,6 +13,10 @@
     <param name="port" value="/dev/ttyUSB0" />
   </node>-->
 
+  <node pkg="sparkfun_rfid" type="sparkfun_rfid.py" name="sparkfun_rfid" output="screen">
+    <param name="port" value="/dev/ttyUSB0" />
+  </node>
+
   <node pkg="nre_p3at" type="twist_watchdog.py" name="twist_watchdog" output="screen" />
 
   <!-- This following lines are taken from the p2os_urdf package-->
