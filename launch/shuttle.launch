@@ -13,6 +13,8 @@
     <param name="port" value="/dev/ttyUSB0" />
   </node>
 
+  <node pkg="nre_p3at" type="twist_watchdog.py" name="twist_watchdog" output="screen" />
+
   <!-- This following lines are taken from the p2os_urdf package-->
   <include file="$(find p2os_urdf)/launch/upload_pioneer3at.xml"/>
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
