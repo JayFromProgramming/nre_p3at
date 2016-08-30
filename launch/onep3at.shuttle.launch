@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="namespace" default="p0" />
+  <arg name="initX" default="0" />
+  <arg name="initY" default="0" />
+  <arg name="initYaw" default="0" />
+
   <arg name="port" default="/dev/ttyS0" />
   <group ns="$(arg namespace)">
     <!-- Generate the tf_prefix from the namespace -->
@@ -31,8 +35,8 @@
     <node pkg="p2os_urdf" type="p2os_publisher_3at" name="publisher"/>
 
     <!-- Static offset between map and odometry frames -->
-    <!--<node pkg="tf" type="static_transform_publisher" name="map_odom_static_broadcaster" args="$(arg initX) $(arg initY) 0 $(arg initYaw) 0 0 /map /$(arg tfpre)/odom 100" />-->
-    <node pkg="tf" type="static_transform_publisher" name="map_odom_static_broadcaster" args="0 0 0 0 0 0 /map /$(arg tfpre)/odom 100" />
+    <node pkg="tf" type="static_transform_publisher" name="map_odom_static_broadcaster" args="$(arg initX) $(arg initY) 0 $(arg initYaw) 0 0 /map /$(arg tfpre)/odom 50" />
+    <!--node pkg="tf" type="static_transform_publisher" name="map_odom_static_broadcaster" args="0 0 0 0 0 0 /map /$(arg tfpre)/odom 50" /-->
   </group>
 
 </launch>
