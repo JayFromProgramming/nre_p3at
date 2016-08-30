@@ -2,7 +2,7 @@
 <launch>
   <arg name="namespace" default="p0" />
   <arg name="port" default="/dev/ttyS0" />
-  <group ns=$(arg namespace)>
+  <group ns="$(arg namespace)">
     <!-- Generate the tf_prefix from the namespace -->
     <arg name="tfpre" default="$(arg namespace)_tf" />
     <!-- Put value on the parameter server in the group's namespace -->
