@@ -8,7 +8,7 @@
     <!-- Put value on the parameter server in the group's namespace -->
     <param name="tf_prefix" value="$(arg tfpre)" />
     
-    <node pkg="rosaria" type="RosAria" name="" output="screen">
+    <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen">
       <param name="port" value="$(arg port)" />
     </node>
 
