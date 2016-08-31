@@ -40,6 +40,8 @@
     <node type="fake_localization" name="fake_localization" pkg="fake_localization">
       <remap from="base_pose_ground_truth" to="my_p3at/pose"/>
       <remap from="amcl_pose" to="pose"/>
+      <param name="odom_frame_id" value="leader_tf/odom"/>
+      <param name="base_frame_id" value="leader_tf/base_link"/>
     </node>
   </group>
 
