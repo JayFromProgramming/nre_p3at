@@ -42,6 +42,9 @@
       <remap from="amcl_pose" to="pose"/>
       <param name="odom_frame_id" value="$(arg tfpre)/odom"/>
       <param name="base_frame_id" value="$(arg tfpre)/base_link"/>
+      <param name="delta_x" value="$(arg initX"/>
+      <param name="delta_y" value="$(arg initY"/>
+      <param name="delta_yaw" value="$(arg initYaw"/>
     </node>
   </group>
 
