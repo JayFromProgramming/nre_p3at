@@ -32,7 +32,7 @@
       <param name="publish_frequency" type="double" value="30.0"/>
       <param name="tf_prefix" value="$(arg tfpre)" />
     </node>
-    <node pkg="p2os_urdf" type="p2os_publisher_3at" name="publisher"/>
+    <!-- node pkg="p2os_urdf" type="p2os_publisher_3at" name="publisher"/ -->
 
     <!-- Static offset between map and odometry frames -->
     <!--node pkg="tf" type="static_transform_publisher" name="map_odom_static_broadcaster" args="$(arg initX) $(arg initY) 0 $(arg initYaw) 0 0 /map /$(arg tfpre)/odom 50" /-->

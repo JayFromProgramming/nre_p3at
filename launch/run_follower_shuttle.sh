@@ -14,4 +14,4 @@ echo "----------------------------------------"
 env | grep ROS
 echo "----------------------------------------"
 
-roslaunch nre_p3at onep3at.shuttle.launch namespace:=follower initX:=2 initY:=2 initYaw:=0 
+roslaunch nre_p3at onep3at.shuttle.launch namespace:=follower initX:=2 initY:=0 initYaw:=0 
