@@ -1,21 +1,22 @@
 <?xml version="1.0"?>
 <!-- Note - This is the launch file used by upstart on booting the pionoeers -->
 <launch>
-  <arg name="port" default="/dev/ttyS0" />
-  <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen">
-    <param name="port" value="$(arg port)" />
-  </node>
-
- <!-- This following lines are taken from the p2os_urdf package-->
-  <include file="$(find p2os_urdf)/launch/upload_pioneer3at.xml"/>
-  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="30.0"/>
-    <param name="tf_prefix" type="string" value=""/>
-  </node>
-  <node pkg="p2os_urdf" type="p2os_publisher_3at" name="publisher"/>
-
-  <include file="$(find microstrain_3dm_gx5_45)/launch/microstrain_pioneer.launch"/>
-
-  <include file="$(find thingmagic_rfid)/launch/reader_pioneer.launch"/>
-
+  <group ns="p1">
+    <arg name="port" default="/dev/ttyS0" />
+    <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen">
+      <param name="port" value="$(arg port)" />
+    </node>
+    
+    <!-- This following lines are taken from the p2os_urdf package-->
+    <include file="$(find p2os_urdf)/launch/upload_pioneer3at.xml"/>
+    <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+      <param name="publish_frequency" type="double" value="30.0"/>
+      <param name="tf_prefix" type="string" value=""/>
+    </node>
+    <node pkg="p2os_urdf" type="p2os_publisher_3at" name="publisher"/>
+    
+    <include file="$(find microstrain_3dm_gx5_45)/launch/microstrain_pioneer.launch"/>
+    
+    <include file="$(find thingmagic_rfid)/launch/reader_pioneer.launch"/>
+  </group>
 </launch>
