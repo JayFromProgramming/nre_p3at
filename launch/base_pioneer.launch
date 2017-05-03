@@ -4,7 +4,7 @@
     <arg name="port" default="/dev/ttyS0" />
     <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen" respawn="true">
       <param name="port" value="$(arg port)" />
-      <oaram name="sonar_frame" value="front_sonar"
+      <param name="sonar_frame" value="front_sonar"/>
     </node>
     
     <!-- This following lines are taken from the p2os_urdf package-->
