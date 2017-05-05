@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- Note - This is the launch file used by upstart on booting the pionoeers -->
 <launch>
-  <group ns="p5">
+  <group ns="p0">
     <arg name="port" default="/dev/ttyS0" />
     <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen" respawn="true">
       <param name="port" value="$(arg port)" />
