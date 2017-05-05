@@ -6,7 +6,7 @@
    <param name="mcast_group" value="224.0.0.1" />
  </node>
 
-  <group ns="p0">
+  <group ns="p5">
     <arg name="port" default="/dev/ttyS0" />
     <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen" respawn="true">
       <param name="port" value="$(arg port)" />
