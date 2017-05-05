@@ -3,7 +3,7 @@
 <launch>
 
   <node pkg="master_discovery_fkie" type="master_discovery" name="master_discovery" output="screen">
-    <param name="_mcast_group" value="244.0.0.1"/>
+    <param name="mcast_group" value="244.0.0.1"/>
   </node>
 
   <group ns="p0">
