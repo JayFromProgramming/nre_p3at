@@ -2,9 +2,9 @@
 <!-- Note - This is the launch file used by upstart on booting the pionoeers -->
 <launch>
 
-  <node pkg="master_discovery_fkie" type="master_discovery" name="master_discovery" output="screen">
-    <param name="mcast_group" value="244.0.0.1"/>
-  </node>
+ <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery" output="screen">
+   <param name="mcast_group" value="224.0.0.1" />
+ </node>
 
   <group ns="p0">
     <arg name="port" default="/dev/ttyS0" />
