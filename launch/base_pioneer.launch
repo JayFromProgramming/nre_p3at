@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!-- Note - This is the launch file used by upstart on booting the pionoeers -->
 <launch>
+  <group ns=p5>
     <arg name="port" default="/dev/ttyS0" />
     <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen" respawn="true">
       <param name="port" value="$(arg port)" />
@@ -18,4 +19,5 @@
     <include file="$(find microstrain_3dm_gx5_45)/launch/microstrain_pioneer.launch" respawn="true"/>
     
     <include file="$(find thingmagic_rfid)/launch/reader_pioneer.launch" respawn="true"/>
+  </group>
 </launch>
