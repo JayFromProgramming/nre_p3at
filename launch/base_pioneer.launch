@@ -12,8 +12,9 @@
     <arg name="port" default="/dev/ttyS0" />
     <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen" respawn="true">
       <param name="port" value="$(arg port)" />
-      <param name="sonar_frame" value="front_sonar"/>
+      <param name="sonar_frame" value="$(optenv HNAME)/sonar_frame"/>
       <param name="odom_frame" value="$(optenv HNAME)/odom"/>
+      <param name="base_link_frame" value="$(optenv HNAME)/base_link"/>
     </node>
     
     <!-- This following lines are taken from the p2os_urdf package-->
