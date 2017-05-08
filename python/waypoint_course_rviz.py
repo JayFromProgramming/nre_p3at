@@ -16,9 +16,10 @@ def clear():
 def talker():
     pub = rospy.Publisher('visualization_marker',vm.Marker,queue_size=10)
     rospy.init_node('waypoint_course')    
-    
-    XX = [0,2,-2,-2,2]
-    YY = [0,2,2,-2,-2]
+    frame = rospy.get_param('~frame','odom')
+    dist = rospy.get_param('~size',2)
+    XX = [0,dist,-dist,-dist,dist]
+    YY = [0,dist,dist,-dist,-dist]
     m=vm.Marker()
     m.type = m.SPHERE_LIST
     m.action = m.ADD
@@ -31,7 +32,7 @@ def talker():
     m.color.a=1.0
     m.pose.orientation.w=1.0;
     m.header.stamp = rospy.Time.now()
-    m.header.frame_id = "odom"
+    m.header.frame_id = frame
     m.id = 1
     for x,y,mid in zip(XX,YY,range(len(XX))):
         p = gm.Point()
