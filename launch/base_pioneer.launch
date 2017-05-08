@@ -6,7 +6,7 @@
    <param name="mcast_group" value="224.0.0.1" />
  </node>
 
-  <param name="tf_prefix" values="$(optenv HNAME /)">
+  <param name="tf_prefix" value="$(optenv HNAME /)"/>
 
   <group ns="$(optenv HNAME /)">
     <arg name="port" default="/dev/ttyS0" />
