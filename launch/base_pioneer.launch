@@ -6,6 +6,8 @@
    <param name="mcast_group" value="224.0.0.1" />
  </node>
 
+  <param name="tf_prefix" values="$(optenv HNAME /)">
+
   <group ns="$(optenv HNAME /)">
     <arg name="port" default="/dev/ttyS0" />
     <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen" respawn="true">
