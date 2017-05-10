@@ -4,7 +4,7 @@
 
 <arg name="namespace" default="p0" />
 <!-- Generate the tf_prefix from the namespace -->
-<arg name="tfpre" default="$(arg namespace)_tf" />
+<arg name="tfpre" default="$(arg namespace)" />
 <arg name="initX" default="0" />
 <arg name="initY" default="0" />
 <arg name="initYaw" default="0" />

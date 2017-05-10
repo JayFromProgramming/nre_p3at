@@ -17,8 +17,8 @@ input arguments and then propogated appropriately.
     <updateRate>100.0</updateRate>
     <robotNamespace>/$(arg nsp)</robotNamespace>
     <robotBaseFrame>base_link</robotBaseFrame>
-    <commandTopic>cmd_vel</commandTopic>
-    <odometryTopic>odom</odometryTopic>
+    <commandTopic>my_p3at/cmd_vel</commandTopic>
+    <odometryTopic>my_p3at/odom</odometryTopic>
     <odometryFrame>odom</odometryFrame>
     <leftFrontJoint>p3at_front_left_wheel_joint</leftFrontJoint>
     <rightFrontJoint>p3at_front_right_wheel_joint</rightFrontJoint>
