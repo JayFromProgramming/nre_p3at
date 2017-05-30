@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-<node pkg="hokuyo_node" type="hokuyo_node" name="my_lidar" respawn="true">
+<node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node" respawn="true">
     <param name="frame_id" value="$(optenv HNAME)/base_link"/>
     <param name="port" value="/dev/hokuyo"/>
     <param name="calibrate_time" value="false"/>

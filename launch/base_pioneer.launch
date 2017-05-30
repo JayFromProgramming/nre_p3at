@@ -30,5 +30,7 @@
     <include file="$(find geonav_transform)/launch/cavr.launch"/>
     
     <include file="$(find thingmagic_rfid)/launch/reader_pioneer.launch"/>
+
+    <include file="$(find nre_p3at)/launch/hokuyo.launch"/>
   </group>
 </launch>
