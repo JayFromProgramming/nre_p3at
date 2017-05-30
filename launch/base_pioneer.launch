@@ -29,6 +29,6 @@
 
     <include file="$(find geonav_transform)/launch/cavr.launch"/>
     
-    <include file="$(find thingmagic_rfid)/launch/reader_pioneer.launch" respawn="true"/>
+    <include file="$(find thingmagic_rfid)/launch/reader_pioneer.launch"/>
   </group>
 </launch>
