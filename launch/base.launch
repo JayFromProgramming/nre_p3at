@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="port" default="/dev/ttyUSB0" />
+  <arg name="trans_accel" default="999999"/>
+  <arg name="trans_decel" default="999999"/>
+  <arg name="rot_accel" default="999999"/>
+  <arg name="rot_decel" default="999999"/>
   <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen">
     <param name="port" value="$(arg port)" />
   </node>
