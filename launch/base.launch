@@ -7,5 +7,9 @@
   <arg name="rot_decel" default="999999"/>
   <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen">
     <param name="port" value="$(arg port)" />
+    <param name="trans_accel" value="99999"/>
+    <param name="trans_decel" value="99999"/>
+    <param name="rot_accel" value="999999"/>
+    <param name="rot_decel" value="999999"/>
   </node>
 </launch>
